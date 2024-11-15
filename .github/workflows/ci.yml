@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+    tags-ignore:
+      - "**"
+
+env:
+  TZ: Asia/Tokyo
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version-file: .tool-versions
+      - name: System information
+        run: |-
+          echo "Node $(node -v)"
+          echo "pnpm v$(pnpm --version)"
+          echo "run-id: ${{ github.run_id }}"
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm release
