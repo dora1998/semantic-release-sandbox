@@ -27,3 +27,5 @@ jobs:
           echo "run-id: ${{ github.run_id }}"
       - run: pnpm install --frozen-lockfile
       - run: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
