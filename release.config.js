@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * @type {import('semantic-release').GlobalConfig}
  */
