@@ -1,6 +1,7 @@
 // @ts-check
 // featfeatfeat
 // hotfix
+// hotfixであるべきだがfeat
 /**
  * @type {import('semantic-release').GlobalConfig}
  */
