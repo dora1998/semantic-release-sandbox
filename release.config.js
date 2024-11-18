@@ -1,5 +1,6 @@
 // @ts-check
 // featfeatfeat
+// mainにもfix
 /**
  * @type {import('semantic-release').GlobalConfig}
  */
